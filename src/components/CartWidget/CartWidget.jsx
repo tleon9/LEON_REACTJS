@@ -1,11 +1,11 @@
-import React from "react";
-import cart from './assets/cart.svg';
+import React from 'react'
+import { FaShoppingCart } from "react-icons/fa";
 
-export const CartWidget = () =>{
-    return(
-        <div>
-            <img src={cart} alt="cart-widget" />
-            1
-        </div>
-    )
+
+export const CartWidget = () => {
+  return (
+    <>
+    <FaShoppingCart className="carrito"/>
+    </>
+  )
 }
