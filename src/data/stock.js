@@ -10,8 +10,11 @@ export const stock = [
 
         image: "https://picsum.photos/200/300",
 
-        category: "clothes"
+        category: "clothes",
+
+        stock: 20,
     },
+
     {
         id:2,
 
@@ -22,6 +25,8 @@ export const stock = [
         image: "https://picsum.photos/200/300?grayscale",
 
         category: "accesories",
+
+        stock: 20,
     },
     {
 
@@ -34,6 +39,8 @@ export const stock = [
         image: "https://picsum.photos/200/300?grayscale",
 
         category: "clothes",
+
+        stock: 20,
 
     },
 
@@ -49,6 +56,8 @@ export const stock = [
 
         category: "clothes",
 
+        stock: 20,
+
     },
 
     {
@@ -63,6 +72,8 @@ export const stock = [
 
         category: "accesories",
 
+        stock: 20,
+
     },
 
     {
@@ -76,6 +87,8 @@ export const stock = [
         image: "https://picsum.photos/200/300?grayscale",
 
         category: "accesories",
+
+        stock: 20,
 
     },
 ]
