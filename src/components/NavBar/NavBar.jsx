@@ -25,9 +25,6 @@ export const NavBar = () =>{
             <Link class="nav-link" to='/productos/accesories'>Accesories</Link>
             </li>
             <li class="nav-item">
-            <Link class="nav-link" to ="/counter">Equipment</Link>
-            </li>
-            <li class="nav-item">
             <Link class="nav-link" to ="/cart"><CartWidget/></Link>
             </li>
         </ul>

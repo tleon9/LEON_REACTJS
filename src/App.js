@@ -13,6 +13,7 @@ import {
 
 } from 'react-router-dom';
 import { CartProvider } from './components/context/CartContext';
+import { Checkout } from './components/Checkout/checkout';
 
 
 
@@ -29,7 +30,7 @@ function App() {
           <Route path='/' element ={<ItemListContainer/>}/>
           <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
           <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
-          <Route path='/counter' element ={<ItemCount/>}/>
+          <Route path='/checkout' element ={<Checkout/>}/>
           <Route path='/cart' element = {<CartScreen/>}/>
           <Route path='*' element={<Navigate to='/'/>} />
         </Routes>
