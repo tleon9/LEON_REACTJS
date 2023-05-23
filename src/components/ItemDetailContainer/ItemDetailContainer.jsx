@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { pedirProductos } from "../../helpers/pedirProductos";
 import { ImSpinner3 } from "react-icons/im";
+import { getFirestore } from "../../firebase/config";
 import {ItemDetail} from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom";
 
@@ -18,19 +18,24 @@ export const ItemDetailContainer= () =>{
         const {itemId} = useParams()
 
         useEffect(() => {
+            const db = getFirestore()
 
-            setLoading(true)
-            pedirProductos()
-                .then(res=>{
-                    setItem( res.find(prod => prod.id === Number(itemId)))
+            const productos = db.collection('productos')
+
+            const item = productos.doc(itemId)
+
+            item.get()
+                .then((doc)=>{
+                    setItem({
+                        id: doc.id,... doc.data() 
+                    })
                 })
-            
-            .catch((error) => console.log(error) )
-            .finally(() => {
-                setLoading(false)
+                .catch((err)=> console.log(err))
+                .finally(()=>{
+                    setLoading(false)
+                })
 
-            })
-
+         
 
 
         },[itemId])

@@ -8,7 +8,7 @@ export const stock = [
 
         price: 35,
 
-        image: "https://picsum.photos/200/300",
+        image: "https://m.media-amazon.com/images/I/51Q0fj4ejNL._AC_UY1000_.jpg",
 
         category: "clothes",
 
@@ -18,11 +18,11 @@ export const stock = [
     {
         id:2,
 
-        description: "Set for Squat",
+        description: "Squat pad",
 
         price: 352,
 
-        image: "https://picsum.photos/200/300?grayscale",
+        image: "https://m.media-amazon.com/images/I/41MF9fperfL._AC_UF1000,1000_QL80_.jpg",
 
         category: "accesories",
 
@@ -36,7 +36,7 @@ export const stock = [
 
         price: 200,
 
-        image: "https://picsum.photos/200/300?grayscale",
+        image: "https://i.pinimg.com/736x/5a/64/af/5a64afcb9a6016e42e4a5df57b25fc7c.jpg",
 
         category: "clothes",
 
@@ -52,7 +52,7 @@ export const stock = [
 
         price: 35,
 
-        image: "https://picsum.photos/200/300",
+        image: "https://images.squarespace-cdn.com/content/v1/5b4544e485ede17941bc95fc/0129bd03-1937-411c-a3f4-6b33fc81c922/smartwool-seamless-sports-bra.jpg",
 
         category: "clothes",
 
@@ -66,9 +66,9 @@ export const stock = [
 
         description: "Ankle Strap",
 
-        price: 352,
+        price: 120,
 
-        image: "https://picsum.photos/id/237/200/300",
+        image: "https://m.media-amazon.com/images/I/810xNgJHvSL._AC_UF1000,1000_QL80_.jpg",
 
         category: "accesories",
 
@@ -84,7 +84,7 @@ export const stock = [
 
         price: 200,
 
-        image: "https://picsum.photos/200/300?grayscale",
+        image: "https://m.media-amazon.com/images/I/81WRvqGXPgL._AC_UF1000,1000_QL80_.jpg",
 
         category: "accesories",
 
