@@ -10,30 +10,34 @@ export const Checkout = () => {
 
   const { carrito, precioTotal, vaciarCarrito } = useContext(CartContext)
 
-
-  const [email, setEmail] = useState("")
-
   const [nombre, setNombre] = useState("")
 
   const [apellido, setApellido] = useState("")
 
   const [telefono, setTelefono] = useState("")
 
+  const [email, setEmail] = useState("")
+
+  const [emailc, setEmailc] = useState("")
+
   const handleSubmit = (e) => {
 
     e.preventDefault()
 
-    console.log("Email:", email)
+    
     console.log("Name:", nombre)
     console.log("Last Name:", apellido)
     console.log("Phone Number:", telefono)
+    console.log("Email:", email)
+    console.log("Emailc:", emailc)
 
     const orden = {
       buyer: {
-        email,
         nombre,
         apellido,
-        telefono
+        telefono,
+        email,
+        emailc
       },
       item: carrito,
       total_price: precioTotal(),
@@ -44,8 +48,9 @@ export const Checkout = () => {
 
     const ordenes = db.collection('ordenes')
 
+    if(email == emailc){
 
-    ordenes.add(orden)
+      ordenes.add(orden)
       .then((res) => {
         Swal.fire({
           icon: 'success',
@@ -70,6 +75,20 @@ export const Checkout = () => {
           })
         })
     })
+
+
+      
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong! Verify email',
+        
+      })
+    }
+
+
+    
   }
 
 
@@ -81,10 +100,7 @@ export const Checkout = () => {
 
       <form onSubmit={handleSubmit} className='container mt-3'>
 
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input type="text" className="form-control" onChange={(e) => setEmail(e.target.value)} value={email} />
-        </div>
+       
         <div className="form-group">
           <label htmlFor="nombre">Name</label>
           <input type="text" className="form-control" onChange={(e) => setNombre(e.target.value)} value={nombre} />
@@ -96,6 +112,14 @@ export const Checkout = () => {
         <div className="form-group">
           <label htmlFor="telefono">Phone Number</label>
           <input type="text" className="form-control" onChange={(e) => setTelefono(e.target.value)} value={telefono} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input type="text" className="form-control" onChange={(e) => setEmail(e.target.value)} value={email} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Confirm Email</label>
+          <input type="text" className="form-control" onChange={(e) => setEmailc(e.target.value)} value={emailc} />
         </div>
         <button type='submit' className='btn btn-success'>Finish</button>
         <Link to='/cart' className='btn btn-info'>Go to Car</Link>
